@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% ststic 'css/style.css' %}">
+</head>
+<body>
+    <form method="Post" action="/update/{{customer.id}}">
+        {% csrf_token %} 
+        <div>
+            <br>
+            <p>
+                <h3>Update Details</h3>
+            </p>
+        </div> 
+        <div>
+            <p>Customer Id:</p>
+            <div>
+                <input type="text" name="cid" value="{{customer.cid}}" />
+            </div>
+        </div>    
+        <div>
+             <p>Customer Name:</p>
+             <div>
+                 <input type="text" name="cname" value="{{customer.cname}}" />
+            </div>
+        </div>
+        <div>
+            <p>Customer Email:</p>
+            <div>
+                <input type="email" name="cemail" value="{{customer.cemail}}" />
+            </div>
+        </div>
+        <div>
+            <p>Customer Contact:</p>
+            <div>
+                <input type="text" name="ccontact" value="{{customer.ccontact}}" />
+            </div>
+        </div>
+        <div>
+            <p>Customer Bookingid:</p>
+            <div>
+                <input type="text" name="cbookingid" value="{{customer.cbookingid}}" />
+           </div>
+        </div>
+        <div>
+            <p>Customer LocationId:</p>
+            <div>
+                <input type="text" name="clocationid" value="{{customer.clocationid}}" />
+            </div>
+        </div>
+        <div>
+            <p>Customer droneShotId:</p>
+            <div>
+                <input type="text" name="cdroneshotid" value="{{customer.cdroneshotid}}" />
+            </div>
+        </div>
+        <div>
+            <p>Customer Time:</p>
+            <div>
+                <input type="text" name="ctime" value="{{customer.ctime}}" />
+            </div>
+        </div>
+        <div>
+            <br>
+            <button type="submit">Update</button>
+        </div>   
+    </form>
+</body>
+</html>
